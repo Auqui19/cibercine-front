@@ -1,16 +1,13 @@
-import React from "react";
-
-
 const carrusel = () => {
     return(
         
 <div id="default-carousel" className="relative w-full" data-carousel="slide">
-      <div className="relative h-56 overflow-hidden rounded-lg md:h-[50rem]">
+      <div className="relative h-56 overflow-hidden rounded-lg md:h-[38rem]">
         {/* Item 1 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
             src="https://i.blogs.es/f49c71/posters/1366_2000.jpg"
-            className="absolute block w-full"
+            className="absolute block w-full h-full"
             alt="..."
           />
         </div>
@@ -18,7 +15,7 @@ const carrusel = () => {
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
             src="https://i.blogs.es/c244d3/mejores-posters2019/1366_2000.jpeg"
-            className="absolute block w-full"
+            className="absolute block w-full h-full"
             alt="..."
           />
         </div>
@@ -26,7 +23,7 @@ const carrusel = () => {
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
             src="https://hips.hearstapps.com/hmg-prod/images/nosotros-us-banner-2-1551785502.jpg"
-            className="absolute block w-full"
+            className="absolute block w-full h-full"
             alt="..."
           />
         </div>
@@ -34,7 +31,7 @@ const carrusel = () => {
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
             src="https://2.bp.blogspot.com/-vGioTKaditY/Wdo1ZSFUS3I/AAAAAAAADCI/SDvSmO-FjLYZjVaXFccX-yLySPcNJAwywCLcBGAs/s640/justice%2Bleague.jpg"
-            className="absolute block w-full"
+            className="absolute block w-full h-full"
             alt="..."
           />
         </div>
@@ -42,7 +39,7 @@ const carrusel = () => {
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
             src="https://salondelmal.com/wp-content/uploads/2012/07/hobbit-5.jpg?w=594&h=395"
-            className="absolute block w-full"
+            className="absolute block w-full h-full"
             alt="..."
           />
         </div>
@@ -101,9 +98,9 @@ const carrusel = () => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M5 1 1 5l4 4"
             />
           </svg>
@@ -125,9 +122,9 @@ const carrusel = () => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="m1 9 4-4-4-4"
             />
           </svg>

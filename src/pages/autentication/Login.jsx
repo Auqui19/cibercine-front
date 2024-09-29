@@ -31,6 +31,7 @@ function Login() {
                             type="submit"
                             className="w-7/12 p-3 bg-yellow-500 text-black font-semibold rounded hover:bg-yellow-600 hover:text-white transition duration-300"
                         >
+                          <i className="fa-duotone fa-solid fa-user"></i>
                             Iniciar
                         </button>
                     </div>

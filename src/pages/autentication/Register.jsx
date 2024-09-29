@@ -1,10 +1,11 @@
 import InputAuthentication from './components/InputAuthentication.jsx'
+import ImgRegister from '../../assets/images/imgRegister.jpg';
 
 function Register() {
     return (
         <div className="flex text-align-center justify-center h-screen bg-gray-900">
             <div className="w-1/2 hidden md:block">
-                <img src="https://img.freepik.com/fotos-premium/grupo-personas-estan-sentadas-cine-palabras-no-parte-inferior_783884-235385.jpg" alt="cine" className="object-cover h-full w-full"/>
+                <img src={ImgRegister} alt="cine" className="object-cover h-full w-full"/>
             </div>
             <div className="w-full md:w-1/2 bg-gray-800 text-white flex flex-col justify-center items-center">
                 <h2 className="text-5xl font-bold m-4 pb-4">

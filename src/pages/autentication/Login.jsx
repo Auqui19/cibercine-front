@@ -2,7 +2,7 @@ function Login() {
     return (
         <div className="flex text-align-center justify-center h-screen bg-gray-900">
             <div className="w-1/2 hidden md:block">
-                <img src="https://thumbs.dreamstime.com/z/gente-feliz-en-el-cine-19258703.jpg" alt="cine" className="object-cover h-full w-full"/>
+                <img src="https://img.freepik.com/fotos-premium/ninos-cine-ia-generativa_446633-164207.jpg" alt="cine" className="object-cover h-full w-full"/>
             </div>
             <div className="w-full md:w-1/2 bg-gray-800 text-white flex flex-col justify-center items-center">
                 <h2 className="text-5xl font-bold m-4 pb-4">
@@ -36,7 +36,7 @@ function Login() {
                     </div>
                 </form>
                 <p className="mt-4 text-center">
-                    ¿Ya tienes cuenta? <a href="#" className="text-yellow-500 hover:text-yellow-600 hover:underline" >Iniciar Sesión</a>
+                    ¿Aun no tienes cuenta? <a href="#" className="text-yellow-500 hover:text-yellow-600 hover:underline" >Registrate</a>
                 </p>
             </div>
         </div>

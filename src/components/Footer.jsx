@@ -1,34 +1,26 @@
 function Footer() {
   return (
-    <div className="w-full bg-[#020305] flex justify-center"> 
-        <div className="flex justify-center items-center w-11/12">
-            <div className="flex justify-center items-center">
-                <div className="flex flex-col items-center">
-                    <div className="text-center">
-                        <h1 className="text-2xl font-bold text-white">
-                            cibercine
-                        </h1>
-                        <p className="text-center text-white">
-                            cibercine is a social networking platform that
-                            allows users to create profiles, connect with
-                            friends, and share their interests and hobbies.
-                        </p>
-                    </div>
+    <div className="w-full bg-gray-800 text-white text-base flex justify-center pt-16 pb-5"> 
+        <div className="flex flex-col justify-center items-center w-10/12">
+            <div className="grid grid-cols-5 gap-4 w-full mb-16">
+                <div className="col-span-1">
+                    <h1 className="text-2xl font-bold">CiberCine</h1>
                 </div>
-            </div> 
-            <div className="flex justify-center items-center">
-                <div className="flex flex-col items-center">
-                    <div className="text-center">
-                        <h1 className="text-2xl font-bold text-white">
-                            cibercine
-                        </h1>
-                        <p className="text-center text-white">
-                            cibercine is a social networking platform that
-                            allows users to create profiles, connect with
-                            friends, and share their interests and hobbies.
-                        </p>
-                    </div>
+                <div className="col-span-3">
+                    <ul className="flex list-none gap-16 justify-center">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Peliculas</a></li>
+                        <li><a href="#">Noticias</a></li>
+                    </ul>
                 </div>
+                <div className="col-span-1 text-2xl flex gap-5 justify-end">
+                    <i className="fa-brands fa-square-facebook"></i>
+                    <i className="fa-brands fa-square-x-twitter"></i>
+                    <i className="fa-brands fa-square-instagram"></i>
+                </div>
+            </div>
+            <div>
+                <p>Copyright © 2024 CiberCine. All rights reserved.</p>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const MovieCard = ({ title, genre, imageUrl, isEstreno}) => {
   return (
-    <div className="relative max-w-sm rounded-lg border border-yellow-500 shadow-md dark:bg-gray-800 dark:border-gray-700 mx-2">
+    <div className="relative w-full rounded-lg border border-yellow-500 shadow-md dark:bg-gray-800 dark:border-gray-700">
       {/* Aquí está el texto "Estreno" */}
       {isEstreno && (
         <div className="absolute top-2 left-2 bg-red-500 text-white lg:text-sm text-2xl font-bold px-2 py-1 rounded">

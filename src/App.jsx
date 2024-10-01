@@ -57,7 +57,7 @@ function App() {
         <>
           <Navbar/>
           <Carrusel/>
-            <div className="bg-gray-900 min-h-screen text-white p-6 w-10/12 lg:w-[89%] m-auto flex flex-col gap-16">
+            <div className="bg-gray-900 text-white w-full m-auto flex flex-col gap-16">
               <div className="my-8 max-w-screen-xl mx-auto text-center">
                 <h1 className="text-4xl font-bold text-white">BIENVENIDO A CIBERCINE</h1>
                 <p className="text-xl mt-4">
@@ -74,7 +74,7 @@ function App() {
                 
                 <Routes>                
                   <Route path="/" element={<Home/>} />
-                  <Route path="/" element={<Detail/>} />
+                  <Route path="/deadpool" element={<Detail/>} />
                 </Routes>
               </BrowserRouter>
 

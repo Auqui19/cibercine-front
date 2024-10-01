@@ -10,7 +10,7 @@ const MovieList = ({ title, movies }) => {
   }
 
   return (
-    <div className="my-8 max-w-screen-xl mx-auto">
+    <div className="my-8 w-10/12 max-w-screen-xl mx-auto">
      
       <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
       

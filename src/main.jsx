@@ -4,6 +4,8 @@ import App from './App.jsx'
 import Footer from './components/Footer.jsx'
 import './index.css'
 import 'flowbite'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 
 createRoot(document.getElementById('root')).render(

@@ -1,4 +1,5 @@
 import Carrusel from './components/Carrucel.jsx'
+import Navbar from './components/Navbar.jsx';
 import MovieList from './components/MovieList';
 
 
@@ -49,6 +50,7 @@ const estrenoMovies = [
 function App() {
     return (
         <>
+          <Navbar/>
           <Carrusel/>
             <div className="bg-gray-900 min-h-screen text-white p-6 w-10/12 lg:w-[89%] m-auto flex flex-col gap-16">
               <div className="my-8 max-w-screen-xl mx-auto text-center">

@@ -1,7 +1,7 @@
 const carrusel = () => {
     return(
         
-<div id="default-carousel" className="relative w-full" data-carousel="slide">
+<div id="default-carousel" className="relative w-full z-0 pt-20" data-carousel="slide">
       <div className="relative h-56 overflow-hidden rounded-lg md:h-[38rem]">
         {/* Item 1 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>

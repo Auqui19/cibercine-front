@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar.jsx';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Detail from './pages/details/detail.jsx';
 import Home from './pages/Home.jsx';
+import Detail from './pages/details/Detail.jsx';
 
 const Peliculas = () => {
     return (<h1>DETAL</h1>)
@@ -20,7 +20,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/peliculas" element={<Peliculas />} />
               <Route path="/noticias" element={<Noticias />} />
-              <Route path="/detail/:id" element={<Detail />} /> {/* Ruta ejemplo para detalles */}
+              <Route path="/detalle/:title" element={<Detail/>} />
             </Routes>
           </BrowserRouter>
         </>

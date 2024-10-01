@@ -39,7 +39,14 @@ const MovieList = ({ title, movies }) => {
 
 MovieList.propTypes = {
   title:PropTypes.string.isRequired,
-  movies:PropTypes.string.isRequired
+  movies:PropTypes.arrayOf(
+  PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    isEstreno: PropTypes.bool,
+  })
+).isRequired,
 }
 
 export default MovieList;

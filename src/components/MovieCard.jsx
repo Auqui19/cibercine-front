@@ -1,8 +1,15 @@
 import PropTypes from 'prop-types';
 
-const MovieCard = ({ title, genre, imageUrl }) => {
+const MovieCard = ({ title, genre, imageUrl, isEstreno}) => {
   return (
     <div className="relative max-w-sm rounded-lg border border-yellow-500 shadow-md dark:bg-gray-800 dark:border-gray-700 mx-2">
+      {/* Aquí está el texto "Estreno" */}
+      {isEstreno && (
+        <div className="absolute top-2 left-2 bg-red-500 text-white lg:text-sm text-2xl font-bold px-2 py-1 rounded">
+          Estreno
+        </div>
+      )}
+
       <img className="rounded-t-lg w-full" src={imageUrl} alt={title} />
       <div className="p-5">
         <h5 className="text-2xl font-bold tracking-tight text-white dark:text-white">{title}</h5>
@@ -20,5 +27,6 @@ MovieCard.propTypes = {
   title: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   genre: PropTypes.string.isRequired,
+  isEstreno: PropTypes.bool,
 };
 export default MovieCard;

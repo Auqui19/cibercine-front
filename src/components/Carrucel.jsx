@@ -38,7 +38,7 @@ const carrusel = () => {
         {/* Item 5 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src="https://salondelmal.com/wp-content/uploads/2012/07/hobbit-5.jpg?w=594&h=395"
+            src="https://static.posters.cz/image/hp/69167.jpg"
             className="absolute block w-full h-full"
             alt="..."
           />

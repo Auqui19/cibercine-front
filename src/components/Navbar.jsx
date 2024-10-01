@@ -1,14 +1,13 @@
 import LogoCiberCine from '../assets/images/LogoCiberCine.png';
-
 import { useState, useEffect } from 'react';
+import Login from '../pages/autentication/Login.jsx';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      
-    };
+    const handleScroll = () => {};
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -16,6 +15,10 @@ const Navbar = () => {
   }, []);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const toggleLoginModal = () => {
+    setLoginModalOpen(!loginModalOpen);
   };
 
   return (
@@ -61,8 +64,9 @@ const Navbar = () => {
         <li><a href="#" className="hover:text-yellow-500">Películas</a></li>
         <li><a href="#" className="hover:text-yellow-500">Noticias</a></li>
       </ul>
-      <button className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 hidden sm:block">
-                <i className="fa-duotone fa-solid fa-user"></i>
+      <button className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 
+      hidden sm:block" onClick={toggleLoginModal}>
+        <i className="fa-duotone fa-solid fa-user"></i>
         </button>
 
       {/* Menú desplegable para pantallas pequeñas */}
@@ -72,8 +76,30 @@ const Navbar = () => {
           <li><a href="#peliculas" className="hover:text-gray-300" onClick={toggleMenu}>Películas</a></li>
           <li><a href="#noticias" className="hover:text-gray-300" onClick={toggleMenu}>Noticias</a></li>
         </ul>
-        <button className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 w-full text-center" onClick={toggleMenu}>Unirme</button>
+        <button className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 
+          w-full text-center" onClick={toggleMenu}>
+          Unirme
+          </button>
       </div>
+
+      {/* Modal de Login */}
+      {loginModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="relative w-full max-w-5xl m-full pt-20 rounded-lg">
+
+            {/* Botón para cerrar el modal */}
+            <button
+              onClick={toggleLoginModal}
+              className="mt-4 w-14 bg-red-500 text-white py-2 rounded hover:bg-red-600 transition duration-300"
+            >Cerrar</button>
+
+           
+            <Login /> {/* Aquí se carga el componente de Login */}
+
+            
+          </div>
+        </div>
+        )}
     </nav>
   );
 };

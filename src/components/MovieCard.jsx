@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const MovieCard = ({ title, genre, imageUrl }) => {
   return (
@@ -16,5 +16,9 @@ const MovieCard = ({ title, genre, imageUrl }) => {
     </div>
   );
 };
-
+MovieCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
+};
 export default MovieCard;

@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import MovieCard from './MovieCard';
 
 const MovieList = ({ title, movies }) => {
@@ -36,5 +36,10 @@ const MovieList = ({ title, movies }) => {
     </div>
   );
 };
+
+MovieList.propTypes = {
+  title:PropTypes.string.isRequired,
+  movies:PropTypes.string.isRequired
+}
 
 export default MovieList;

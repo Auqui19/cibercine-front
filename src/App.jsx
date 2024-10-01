@@ -1,5 +1,3 @@
-import Login from './pages/autentication/Login.jsx'
-import Register from './pages/autentication/Register.jsx'
 import Carrusel from './components/Carrucel.jsx'
 import MovieList from './components/MovieList';
 
@@ -51,8 +49,6 @@ function App() {
     return (
         <>
             <Carrusel/>
-            <Login/>
-            <Register/>
             <div className="bg-gray-900 min-h-screen text-white p-6">
   <div className="my-8 max-w-screen-xl mx-auto text-center">
     <h1 className="text-4xl font-bold text-white">BIENVENIDO A CIBERCINE</h1>

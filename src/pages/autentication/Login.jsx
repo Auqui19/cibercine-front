@@ -16,7 +16,7 @@ function Login() {
                     Ingresa a tu cuenta para disfrutar de tus beneficios, acumular puntos y vivir al máximo la experiencia CiberCine.
                 </p>
 
-                <form className="space-y-6">
+                <form className="space-y-6 mx-20 sm:mx-20">
                     <InputAuthentication type="email" placeholder="Correo" required/>
                     <InputAuthentication type="password" placeholder="Contraseña" required/>
                     <div className="flex justify-center">

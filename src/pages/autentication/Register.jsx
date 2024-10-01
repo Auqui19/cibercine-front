@@ -16,7 +16,7 @@ function Register() {
                     Completa tus datos y accede a nuestros servicios.
                 </p>
 
-                <form className="space-y-6 mx-20">
+                <form className="space-y-6 mx-20 sm:mx-24">
                     <InputAuthentication type="name" placeholder="Nombre" required/>
                     <InputAuthentication type="lastName" placeholder="Apellido" required/>
                     <InputAuthentication type="email" placeholder="Correo" required/>

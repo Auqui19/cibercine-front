@@ -1,7 +1,12 @@
 import Carrusel from './components/Carrucel.jsx'
 import Navbar from './components/Navbar.jsx';
 import MovieList from './components/MovieList';
+import { Routes, Route, BrowserRouter, Link } from 'react-router-dom';
+import Detail from './pages/details/detail.jsx';
 
+const Home = () => {
+  return (<h1>HOla</h1>)
+}
 
 const estrenoMovies = [
     {
@@ -58,10 +63,20 @@ function App() {
                 <p className="text-xl mt-4">
                   ¿Estás listo para vivir la más grande experiencia y disfrutar los mejores beneficios?
                 </p>
-                <button className="mt-6 transition bg-yellow-500 hover:bg-yellow-600 text-black hover:text-white transition duration-300 font-bold py-2 px-4 rounded">
+                <button className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black hover:text-white transition duration-300 font-bold py-2 px-4 rounded">
                   UNIRME
                 </button>
               </div>
+
+              <BrowserRouter>
+                <Link to="/">Home</Link>
+                <Link to="/deadpool">IR PAGINAS DETAIL</Link>
+                
+                <Routes>                
+                  <Route path="/" element={<Home/>} />
+                  <Route path="/" element={<Detail/>} />
+                </Routes>
+              </BrowserRouter>
 
               {/* Lista de Estrenos */}
               <MovieList title="Estrenos" movies={estrenoMovies} />

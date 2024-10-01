@@ -10,16 +10,16 @@ const MovieList = ({ title, movies }) => {
   }
 
   return (
-    <div className="my-8 w-10/12 max-w-screen-xl mx-auto">
+    <div className="my-8 w-11/12 lg:w-10/12 max-w-screen-xl mx-auto">
      
       <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
       
 
-      <div className="space-y-8">
+      <div>
         {chunkedMovies.map((movieChunk, index) => (
           <div
             key={index}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-4"
           >
             {movieChunk.map((movie, idx) => (
               <MovieCard

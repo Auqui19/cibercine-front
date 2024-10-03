@@ -1,52 +1,6 @@
 import Carrusel from "../components/Carrucel";
 import MovieList from "../components/MovieList";
-
-const estrenoMovies = [
-  {
-    title: "Masacre en Texas",
-    genre: "Terror",
-    imageUrl:
-      "https://cdn.apis.cineplanet.com.pe/CDN/media/entity/get/FilmPosterGraphic/HO00002037?referenceScheme=HeadOffice&allowPlaceHolder=true",
-    isEstreno: true,
-  },
-  {
-    title: "Chibolin a la Fama",
-    genre: "Terror",
-    imageUrl:
-      "https://cdn.apis.cineplanet.com.pe/CDN/media/entity/get/FilmPosterGraphic/HO00001976?referenceScheme=HeadOffice&allowPlaceHolder=true",
-    isEstreno: true,
-  },
-  {
-    title: "Terroristas",
-    genre: "Terror",
-    imageUrl:
-      "https://cdn.apis.cineplanet.com.pe/CDN/media/entity/get/FilmPosterGraphic/HO00002197?referenceScheme=HeadOffice&allowPlaceHolder=true",
-    isEstreno: true,
-  },
-  {
-    title: "Luis",
-    genre: "Terror",
-    imageUrl:
-      "https://cdn.apis.cineplanet.com.pe/CDN/media/entity/get/FilmPosterGraphic/HO00002037?referenceScheme=HeadOffice&allowPlaceHolder=true",
-    isEstreno: true,
-  },
-  {
-    title: "Susy Diaz",
-    genre: "Terror",
-    imageUrl:
-      "https://cdn.apis.cineplanet.com.pe/CDN/media/entity/get/FilmPosterGraphic/HO00001976?referenceScheme=HeadOffice&allowPlaceHolder=true",
-    isEstreno: true,
-  },
-];
-
-const peliculasMovies = [
-  {
-    title: "El Señor de los Anillos",
-    genre: "Fantasía",
-    imageUrl:
-      "https://cdn.apis.cineplanet.com.pe/CDN/media/entity/get/FilmPosterGraphic/HO00002198?referenceScheme=HeadOffice&allowPlaceHolder=true",
-  },
-];
+import { estrenoMovies, peliculasMovies } from '../pages/details/moviesData'; 
 
 function App() {
   return (
@@ -58,8 +12,7 @@ function App() {
             BIENVENIDO A CIBERCINE
           </h1>
           <p className="text-xl mt-4">
-            ¿Estás listo para vivir la más grande experiencia y disfrutar los
-            mejores beneficios?
+            ¿Estás listo para vivir la más grande experiencia y disfrutar los mejores beneficios?
           </p>
           <button className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black hover:text-white transition duration-300 font-bold py-2 px-4 rounded">
             UNIRME

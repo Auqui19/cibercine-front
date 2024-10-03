@@ -1,7 +1,7 @@
 const carrusel = () => {
     return(
         
-<div id="default-carousel" className="relative w-full z-0 max-w-screen-2xl" data-carousel="slide">
+<div id="default-carousel" className="relative w-full z-0 " data-carousel="slide">
       <div className="relative h-80 overflow-hidden lg:h-screen">
         {/* Item 1 */}
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
@@ -82,7 +82,7 @@ const carrusel = () => {
           data-carousel-slide-to="4"
         ></button>
       </div>
-      {/* Slider controls */}
+      
       <button
         type="button"
         className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"

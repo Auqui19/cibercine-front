@@ -12,6 +12,7 @@ const MetodosPago = () => {
   const date = queryParams.get('date');
   const time = queryParams.get('time');
   const combos = queryParams.get('combos');
+  const initialTotalPrice = parseFloat(queryParams.get('totalPrice')) || 0;
 
   const movie = [...estrenoMovies, ...peliculasMovies].find(
     (m) => m.title === movieTitle
@@ -73,7 +74,7 @@ const MetodosPago = () => {
   const handlePay = () => {
     if (!isPaymentDisabled()) {
       navigate(
-        `/confirmacion-pago?movie=${movieTitle}&seats=${selectedSeats}&date=${date}&time=${time}&combos=${combos}&method=${selectedPaymentMethod}&wallet=${selectedWallet}`
+        `/confirmacion-pago?movie=${movieTitle}&seats=${selectedSeats}&date=${date}&time=${time}&combos=${combos}&method=${selectedPaymentMethod}&wallet=${selectedWallet}&totalPrice=${initialTotalPrice.toFixed(2)}`
       );
     }
   };
@@ -426,6 +427,10 @@ const MetodosPago = () => {
             <div className="flex justify-between w-full mt-4">
               <p className="text-lg font-semibold">Combos seleccionados</p>
               <p>{combos || 'Ninguno'}</p>
+            </div>
+            <div className="flex justify-between w-full mt-4">
+              <p className="text-lg font-semibold">Importe Total</p>
+              <p>S/ {initialTotalPrice.toFixed(2)}</p>
             </div>
           </div>
         )}

@@ -70,6 +70,7 @@ const TicketSelection = () => {
       alert('Por favor, selecciona el número de entradas que coincida con las butacas seleccionadas.');
     }
   };
+  
 
   return (
     <div className="min-h-screen bg-gray-900 flex justify-center items-center py-12">

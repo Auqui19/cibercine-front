@@ -1,54 +1,100 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { estrenoMovies, peliculasMovies } from '../pages/details/moviesData';
 
 const SeatSelection = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
+  const navigate = useNavigate();
 
   const date = queryParams.get('date');
   const time = queryParams.get('time');
   const movieTitle = queryParams.get('movie');
 
-  // Buscar la película seleccionada por el título
   const movie = [...estrenoMovies, ...peliculasMovies].find(
     (m) => m.title === movieTitle
   );
 
   const [selectedSeats, setSelectedSeats] = useState([]);
-  const totalSeats = 48;
+  const rows = 10; // Número de filas de asientos
+  const cols = 8; // Número de columnas de asientos
 
-  const handleSeatClick = (seatNumber) => {
-    if (selectedSeats.includes(seatNumber)) {
-      setSelectedSeats(selectedSeats.filter((seat) => seat !== seatNumber));
+  // Simulación de algunos asientos ocupados
+  const occupiedSeats = ['A3', 'B5', 'C7', 'D1', 'F4'];
+
+  const handleSeatClick = (seatId) => {
+    if (occupiedSeats.includes(seatId)) return; // No permitir seleccionar asientos ocupados
+    if (selectedSeats.includes(seatId)) {
+      setSelectedSeats(selectedSeats.filter((seat) => seat !== seatId));
     } else {
-      setSelectedSeats([...selectedSeats, seatNumber]);
+      setSelectedSeats([...selectedSeats, seatId]);
     }
   };
+
+  const handleContinue = () => {
+    if (selectedSeats.length > 0) {
+      const selectedSeatsString = selectedSeats.join(',');
+      // Redirigir a la selección de entradas en lugar de la confitería
+      navigate(`/ticket-selection?movie=${movieTitle}&date=${date}&time=${time}&seats=${selectedSeatsString}`);
+    } else {
+      alert('Por favor, selecciona al menos una butaca antes de continuar.');
+    }
+  };
+  
 
   return (
     <div className="min-h-screen bg-gray-900 flex justify-center items-center py-12">
       <div className="w-11/12 lg:w-10/12 max-w-screen-lg mx-auto bg-gray-800 text-white p-6 rounded-lg shadow-lg flex flex-col lg:flex-row gap-10">
-        
-        {/* Asientos */}
+        {/* Sección de Asientos */}
         <div className="w-full lg:w-2/3">
           <h2 className="text-4xl font-bold mb-6">Selecciona tus butacas</h2>
-          <div className="grid grid-cols-8 gap-4 justify-center">
-            {Array.from({ length: totalSeats }, (_, i) => (
-              <button
-                key={i}
-                className={`w-10 h-10 rounded-md ${
-                  selectedSeats.includes(i + 1)
-                    ? 'bg-yellow-500'
-                    : 'bg-gray-700 hover:bg-gray-600'
-                }`}
-                onClick={() => handleSeatClick(i + 1)}
-                title={`Butaca ${Math.ceil((i + 1) / 8)}${String.fromCharCode(65 + (i % 8))}`} 
-              >
-                <span role="img" aria-label="seat">
-                <i class="fa-solid fa-chair"></i>
-                </span>
-              </button>
+          <div className="grid grid-cols-[auto,repeat(8,1fr)] gap-x-2 gap-y-4 justify-center items-center">
+            {/* Etiquetas de columnas */}
+            <div></div> {/* Espacio en blanco para la esquina superior izquierda */}
+            {Array.from({ length: cols }, (_, i) => (
+              <div key={i} className="text-center text-gray-300">
+                {i + 1}
+              </div>
+            ))}
+
+            {/* Filas de asientos con etiquetas */}
+            {Array.from({ length: rows }, (_, rowIndex) => (
+              <React.Fragment key={rowIndex}>
+                {/* Etiqueta de fila */}
+                <div className="text-center text-gray-300">
+                  {String.fromCharCode(65 + rowIndex)}
+                </div>
+                {/* Asientos de la fila */}
+                {Array.from({ length: cols }, (_, colIndex) => {
+                  const seatId = `${String.fromCharCode(65 + rowIndex)}${colIndex + 1}`;
+                  const isOccupied = occupiedSeats.includes(seatId);
+                  const isSelected = selectedSeats.includes(seatId);
+                  return (
+                    <button
+                      key={seatId}
+                      className={`w-10 h-10 rounded-full relative ${
+                        isOccupied
+                          ? 'bg-red-500 cursor-not-allowed'
+                          : isSelected
+                          ? 'bg-blue-500'
+                          : 'bg-gray-700 hover:bg-gray-600'
+                      }`}
+                      onClick={() => handleSeatClick(seatId)}
+                      disabled={isOccupied}
+                    >
+                      <span
+                        className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-sm px-2 py-1 rounded shadow-lg opacity-0 hover:opacity-100 transition-opacity duration-200"
+                        style={{ whiteSpace: 'nowrap', fontSize: '1.25rem' }}
+                      >
+                        {seatId}
+                      </span>
+                      <span role="img" aria-label="seat">
+                        <i className="fa-solid fa-chair"></i>
+                      </span>
+                    </button>
+                  );
+                })}
+              </React.Fragment>
             ))}
           </div>
           <div className="text-center mt-4">
@@ -83,7 +129,10 @@ const SeatSelection = () => {
                 <p>{selectedSeats.length > 0 ? selectedSeats.join(', ') : 'No has seleccionado ninguna butaca'}</p>
               </div>
               <div className="flex justify-between w-full mt-6">
-                <button className="bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-600">
+                <button
+                  className="bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-600"
+                  onClick={handleContinue}
+                >
                   Continuar
                 </button>
                 <button className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
